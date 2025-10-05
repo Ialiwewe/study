@@ -1,0 +1,68 @@
+{
+  "depth_column": "Depth_ft",
+  "depth_label": "Depth (ft)",
+  "invert_depth": true,
+  "depth_limits": null,
+  "tracks": [
+    {
+      "title": "SP",
+      "xlabel": "SP (mV)",
+      "xlim": [-120, 40],
+      "grid": true,
+      "curves": [
+        {"column": "SponPotential_mv", "color": "#8B0000", "label": "SP"}
+      ]
+    },
+    {
+      "title": "Gamma Ray",
+      "xlabel": "Gamma Ray (API)",
+      "xlim": [0, 150],
+      "grid": true,
+      "invert_x": true,
+      "curves": [
+        {"column": "GammaRay_api", "color": "#228B22", "label": "GR"}
+      ]
+    },
+    {
+      "title": "Resistivity",
+      "xlabel": "Resistivity (ohm·m)",
+      "xlim": [0.2, 200],
+      "scale": "log",
+      "grid": true,
+      "curves": [
+        {"column": "Resistivity_Shallow_ohmm", "color": "#B22222", "label": "RS"},
+        {"column": "Resistivity_Medium_ohmm", "color": "#1E90FF", "label": "RM"},
+        {"column": "Resistivity_Deep_ohmm", "color": "#000000", "label": "RD"}
+      ]
+    },
+    {
+      "title": "Density vs Neutron",
+      "xlabel": "Density / Neutron",
+      "xlim": [0.45, 2.95],
+      "grid": true,
+      "curves": [
+        {"column": "Density_gcc", "color": "#8A2BE2", "label": "Density", "linewidth": 1.8},
+        {"column": "NeutronPorosity_vv", "color": "#FF8C00", "label": "Neutron", "linewidth": 1.4}
+      ],
+      "fill_between": [
+        {
+          "left": "Density_gcc",
+          "right": "NeutronPorosity_vv",
+          "color": "#D3D3D3",
+          "alpha": 0.4,
+          "where": "left>right"
+        }
+      ]
+    },
+    {
+      "title": "Porosity & Sw",
+      "xlabel": "Fraction",
+      "xlim": [0.0, 0.6],
+      "grid": true,
+      "curves": [
+        {"column": "Porosity_core_vv", "color": "#2F4F4F", "label": "Phi"},
+        {"column": "WaterSaturation_frac", "color": "#FF1493", "label": "Sw"}
+      ]
+    }
+  ]
+}
